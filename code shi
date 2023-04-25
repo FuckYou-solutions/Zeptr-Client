@@ -69,7 +69,7 @@ local Button = Tab:CreateButton({
    loadstring(game:HttpGet('https://raw.githubusercontent.com/Terkv12/Zeptr-Client/main/phsi'))()
    end,
 })
-local Tab = Window:CreateTab("fly hack sho", nil) -- Title, Image
+local Tab = Window:CreateTab("misc", nil) -- Title, Image
 local Section = Tab:CreateSection("idk")
 local Button = Tab:CreateButton({
    Name = "shity fly",

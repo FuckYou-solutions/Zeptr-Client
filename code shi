@@ -81,6 +81,23 @@ return(function(i,a,m)local k=string.char;local e=string.sub;local r=table.conca
 local Button = Tab:CreateButton({
    Name = "jail break auto arrest",
    Callback = function()
-   loadstring(game:HttpGet('https://raw.githubusercontent.com/getjpog/jailpoggers/main/AutoArrestInstantTP.lua'))()
+   Name = "ALERT",
+   Callback = function()
+   Rayfield:Notify({
+   Title = "Zeptr Credits",
+   Content = "NOT WORKING",
+   Duration = 6.5,
+   Image = 4483362458,
+   Actions = { -- Notification Buttons
+      Ignore = {
+         Name = ":(",
+         Callback = function()
+         print("Why are you reading this?")
+      end
+   },
+},
+})
+   end,
+})
    end,
    })

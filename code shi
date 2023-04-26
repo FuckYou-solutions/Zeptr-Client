@@ -78,11 +78,10 @@ local Toggle = Tab:CreateToggle({
    Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
    Callback = function(Value)
 loadstring(game:HttpGet('https://raw.githubusercontent.com/Terkv12/Zeptr-Client/main/web%20client'))()
-   
-   else
-   
-   Sense.Unload()
+if Value = false
+Sense.Unload()
    end,
+    })
 })
 
 

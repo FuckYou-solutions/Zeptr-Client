@@ -82,7 +82,6 @@ if Value then
         else
             print('b')
         end
-    end,
 })
 
 

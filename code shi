@@ -79,6 +79,7 @@ local Toggle = Tab:CreateToggle({
    Callback = function(Value)
 loadstring(game:HttpGet('https://raw.githubusercontent.com/Terkv12/Zeptr-Client/main/web%20client'))()
    
+   else
    
    Sense.Unload()
    end,

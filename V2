@@ -1,0 +1,129 @@
+local Library = loadstring(game:GetObjects("rbxassetid://7657867786")[1].Source)() -- Pepsi's UI Library
+local Sense = loadstring(game:HttpGet('https://sirius.menu/sense'))()
+Sense.teamSettings.enemy.enabled = true
+Sense.teamSettings.enemy.box = false
+Sense.teamSettings.enemy.boxColor[1] = Color3.fromRGB(110, 24, 173)
+Sense.teamSettings.enemy.healthBar = false
+Sense.teamSettings.enemy.name = false
+Sense.teamSettings.enemy.tracer = false
+Sense.teamSettings.enemy.tracerColor = { Color3.fromRGB(110, 24, 173), 1 }
+Sense.teamSettings.enemy.offScreenArrowColor = { Color3.fromRGB(110, 24, 173), 1 }
+Sense.teamSettings.enemy.chamsOutlineColor = { Color3.fromRGB(110, 24, 173), 0 }
+Sense.teamSettings.enemy.chamsFillColor = { Color3.fromRGB(110, 24, 173), 0.5 }
+
+
+
+local MainFrame = Library:CreateWindow({
+	Name = "Zeptr V2",
+	Themeable = {
+		Info = "Zeptr is best",
+		Credit = false
+	},
+	Background = "",
+	Theme = [[{"__Designer.Colors.topGradient":"3F0C64","__Designer.Colors.section":"C259FB","__Designer.Colors.hoveredOptionBottom":"4819B4","__Designer.Background.ImageAssetID":"rbxassetid://4427304036","__Designer.Colors.selectedOption":"4E149C","__Designer.Colors.unselectedOption":"482271","__Designer.Files.WorkspaceFile":"Zeptr V2","__Designer.Colors.unhoveredOptionTop":"310269","__Designer.Colors.outerBorder":"391D57","__Designer.Background.ImageColor":"69009C","__Designer.Colors.tabText":"B9B9B9","__Designer.Colors.elementBorder":"160B24","__Designer.Background.ImageTransparency":100,"__Designer.Colors.background":"1E1237","__Designer.Colors.innerBorder":"531E79","__Designer.Colors.bottomGradient":"361A60","__Designer.Colors.sectionBackground":"21002C","__Designer.Colors.hoveredOptionTop":"6B10F9","__Designer.Colors.otherElementText":"7B44A8","__Designer.Colors.main":"AB26FF","__Designer.Colors.elementText":"9F7DB5","__Designer.Colors.unhoveredOptionBottom":"3E0088","__Designer.Background.UseBackgroundImage":false}]]
+})
+local VisualsTab = MainFrame:CreateTab({
+	Name = "Visuals"
+})
+local ESPSettings = VisualsTab:CreateSection({
+	Name = "ESP Settings"
+})
+ESPSettings:AddToggle({
+	Name = "Enabled",
+	Value = esp1,
+	Callback = function(Value)
+		if Value then
+            Sense.Load()
+        else
+            Sense.Unload()
+        end
+    end,
+})
+ESPSettings:AddToggle({
+	Name = "Boxes",
+	Value = esp2,
+	Callback = function(Value)
+		if Value then
+            Sense.teamSettings.enemy.box = true
+        else
+            Sense.teamSettings.enemy.box = false
+        end
+    end,
+})
+ESPSettings:AddToggle({
+	Name = "Tracers",
+	Value = esp3,
+	Callback = function(Value)
+		if Value then
+            Sense.teamSettings.enemy.tracer = true
+        else
+            Sense.teamSettings.enemy.tracer = false
+        end
+    end,
+})
+ESPSettings:AddToggle({
+	Name = "Name",
+	Value = esp4,
+	Callback = function(Value)
+		if Value then
+            Sense.teamSettings.enemy.name = true
+        else
+            Sense.teamSettings.enemy.name = false
+        end
+    end,
+})
+ESPSettings:AddToggle({
+	Name = "Chams",
+	Value = esp5,
+	Callback = function(Value)
+		if Value then
+            Sense.teamSettings.enemy.chams = true
+        else
+            Sense.teamSettings.enemy.chams = false
+        end
+    end,
+})
+
+
+
+local Chamsettings = VisualsTab:CreateSection({
+	Name = "Cham settings"
+})
+Chamsettings:AddToggle({
+	Name = "Visable only",
+	Value = cham1,
+	Callback = function(Value)
+		if Value then
+            Sense.teamSettings.enemy.chamsVisibleOnly = true
+        else
+            Sense.teamSettings.enemy.chamsVisibleOnly = false
+        end
+    end,
+})
+
+
+local Tracersettings = VisualsTab:CreateSection({
+	Name = "Tracer settings"
+})
+Tracersettings:AddToggle({
+	Name = "off Screen Arrow",
+	Value = Tracersettings1,
+	Callback = function(Value)
+		if Value then
+            Sense.teamSettings.enemy.offScreenArrow = true
+        else
+            Sense.teamSettings.enemy.offScreenArrow = false
+        end
+    end,
+})
+Tracersettings:AddToggle({
+	Name = "Origin",
+	Value = Tracersettings1,
+	Callback = function(Value)
+		if Value then
+            Sense.teamSettings.enemy.tracerOrigin = "Middle"
+        else
+            Sense.teamSettings.enemy.tracerOrigin = "Bottom"
+        end
+    end,
+})
